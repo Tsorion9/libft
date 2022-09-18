@@ -1,4 +1,4 @@
-NAME = libfttest
+NAME = libfttest.out
 SRC = libfttest.c tests/LibftTestCommon.c tests/AtoiTest.c
 CC = gcc
 INCLUDE = ../libft/includes
