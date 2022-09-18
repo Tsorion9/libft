@@ -31,7 +31,7 @@ void printSuccessTest(const char *funcName)
  *
  *  \param[in] funcName Имя функции
  *  \param[in] expectedValue Ожидаемое значение
- *  \param[in] actualValue Фаутическое значение
+ *  \param[in] actualValue Фактическое значение
  *
  */
 void printFaultTestCase(const char *funcName, const char *expectedValue, const char *actualValue)

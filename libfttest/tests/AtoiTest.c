@@ -20,7 +20,7 @@
 int ftAtoiTestCase(const char *arg1)
 {
     int ret = 0;
-    int expected = ft_atoi(arg1);
+    int expected = ftAtoi(arg1);
     char expectedStr[MAX_INT_DIGITS + 1];
     int actual = atoi(arg1);
     char actualStr[MAX_INT_DIGITS + 1];
@@ -30,7 +30,7 @@ int ftAtoiTestCase(const char *arg1)
         ret = 1;
         sprintf(expectedStr, "%d", expected);
         sprintf(actualStr, "%d", actual);
-        printFaultTestCase("ft_atoi", expectedStr, actualStr);
+        printFaultTestCase("ftAtoi", expectedStr, actualStr);
     }
     return (ret);
 }
