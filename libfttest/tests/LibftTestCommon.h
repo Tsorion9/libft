@@ -14,9 +14,17 @@
 #include "../../libft/includes/libft.h"
 #include <stdio.h>
 #include <stddef.h>
+#include <strings.h>
 
-#define MAX_INT_DIGITS 9 /*!< Максимальное количество цифр в int числе */
+#define SIZE_20 20        /*!< 20 байт */
 
 void printSuccessTest(const char *funcName);
-void printFaultTestCase(const char *funcName, const char *expectedValue, const char *actualValue);
+void printStringFaultTestCase(const char *funcName, const char *expectedValue,
+                              const char *actualValue);
+void printByteFaultTestCase(const char *funcName,
+                            const void *expectedValue,
+                            size_t expectedValueSize,
+                            const void *actualValue,
+                            size_t actualValueSize);
+void printIntFaultTestCase(const char *funcName, int expectedValue, int actualValue);
 #endif

@@ -10,4 +10,5 @@
 # define TEST_API_H
 
 void ftAtoiTest(void);
+void ftBzeroTest(void);
 #endif
