@@ -22,7 +22,7 @@
 int ftBzeroTestCase(void *arg1, const size_t arg2, size_t arg1Size)
 {
     int ret = 0;
-    ft_bzero(arg1, arg2);
+    ftBzero(arg1, arg2);
     char actualBuf[arg1Size];
     memcpy(actualBuf, arg1, arg1Size);
     bzero(actualBuf, arg2);
@@ -47,6 +47,9 @@ void ftBzeroTest(void)
     /* Подготовка аргументов необходима перед каждым тест-кейсом */
     char buf[SIZE_20];
     memcpy(buf, "abcdefghijklmnopqrs", SIZE_20);
+    testFault |= ftBzeroTestCase(buf, 0, SIZE_20);
+
+    memcpy(buf, "abcdefghijklmnopqrs", SIZE_20);
     testFault |= ftBzeroTestCase(buf, 2, SIZE_20);
 
     memcpy(buf, "abcdefghijklmnopqrs", SIZE_20);
@@ -54,6 +57,7 @@ void ftBzeroTest(void)
 
     memcpy(buf, "abcdefghijklmnopqrs", SIZE_20);
     testFault |= ftBzeroTestCase(buf, SIZE_20, SIZE_20);
+
     if (!testFault)
     {
         printSuccessTest("ftBzero");

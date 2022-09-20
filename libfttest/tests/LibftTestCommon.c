@@ -40,8 +40,15 @@ void printSuccessTest(const char *funcName)
 void printStringFaultTestCase(const char *funcName, const char *expectedValue,
                               const char *actualValue)
 {
-    fprintf(stdout, "%sFault test case in func %s : expected value: %s, actual value: %s%s\n",
-            RED, funcName, expectedValue, actualValue, NONE_COLOR);
+    if (funcName && expectedValue && actualValue)
+    {
+        fprintf(stdout, "%sFault test case in func %s : expected value: %s, actual value: %s%s\n",
+                RED, funcName, expectedValue, actualValue, NONE_COLOR);
+    }
+    else
+    {
+        fprintf(stdout, "%sOne of the parameters is NULL%s\n", RED, NONE_COLOR);
+    }
 }
 
 /*! \fn         printIntFaultTestCase
@@ -59,10 +66,17 @@ void printIntFaultTestCase(const char *funcName, int expectedValue, int actualVa
     char expectedStr[MAX_INT_DIGITS + 1];
     char actualStr[MAX_INT_DIGITS + 1];
 
-    sprintf(expectedStr, "%d", expectedValue);
-    sprintf(actualStr, "%d", actualValue);
-    fprintf(stdout, "%sFault test case in func %s : expected value: %s, actual value: %s%s\n",
-            RED, funcName, expectedStr, actualStr, NONE_COLOR);
+    if (funcName)
+    {
+        sprintf(expectedStr, "%d", expectedValue);
+        sprintf(actualStr, "%d", actualValue);
+        fprintf(stdout, "%sFault test case in func %s : expected value: %s, actual value: %s%s\n",
+                RED, funcName, expectedStr, actualStr, NONE_COLOR);
+    }
+    else
+    {
+        fprintf(stdout, "%sParametr x is NULL%s\n", RED, NONE_COLOR);
+    }
 }
 
 /*! \fn         printByteFaultTestCase
@@ -83,18 +97,25 @@ void printByteFaultTestCase(const char *funcName, const void *expectedValue, siz
     const char *actualValueChar = (char*)actualValue;
     size_t i = 0;
 
-    fprintf(stdout, "%sFault test case in func %s : expected value: ", RED, funcName);
-    while (i < expectedValueSize)
+    if (funcName && expectedValue && actualValue)
     {
-        fprintf(stdout, "%02X", expectedValueChar[i]);
-        i++;
+        fprintf(stdout, "%sFault test case in func %s : expected value: ", RED, funcName);
+        while (i < expectedValueSize)
+        {
+            fprintf(stdout, "%02X", expectedValueChar[i]);
+            i++;
+        }
+        fprintf(stdout, ", actual value: ");
+        i = 0;
+        while (i < actualValueSize)
+        {
+            fprintf(stdout, "%02X", actualValueChar[i]);
+            i++;
+        }
+        fprintf(stdout, "%s\n", NONE_COLOR);
     }
-    fprintf(stdout, ", actual value: ");
-    i = 0;
-    while (i < actualValueSize)
+    else
     {
-        fprintf(stdout, "%02X", actualValueChar[i]);
-        i++;
+        fprintf(stdout, "%sOne of the parameters is NULL%s\n", RED, NONE_COLOR);
     }
-    fprintf(stdout, "%s\n", NONE_COLOR);
 }

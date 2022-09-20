@@ -32,7 +32,7 @@ char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strdup(const char *s1);
 void				*ft_memset(void *b, int c, size_t len);
-void				*ft_bzero(void *s, size_t n);
+void                ftBzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 char				*ft_strstr(const char *haystack, const char *needle);
 int					ft_strcmp(const char *s1, const char *s2);
