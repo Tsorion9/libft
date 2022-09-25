@@ -1,4 +1,4 @@
-/*! \file       AtoiTest.c
+/*! \file       ftAtoiTest.c
  *
  *  \b Назначение  \b : В данном файле реализованы функции тестирования ftAtoi \n
  *  \b Функции     \b : ftAtoiTestCase \n

@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <strings.h>
+#include <ctype.h>
 
 #define SIZE_20 20        /*!< 20 байт */
 

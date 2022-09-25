@@ -1,5 +1,5 @@
 NAME = libfttest.out
-SRC = libfttest.c tests/LibftTestCommon.c tests/ftAtoiTest.c tests/ftBzeroTest.c
+SRC = libfttest.c tests/LibftTestCommon.c tests/ftAtoiTest.c tests/ftBzeroTest.c tests/ftIsalnumTest.c
 CC = gcc
 INCLUDE = ../libft/includes
 CFLAGS = -Wall -Wextra -Werror -o $(NAME)

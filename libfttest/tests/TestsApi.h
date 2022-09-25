@@ -11,4 +11,5 @@
 
 void ftAtoiTest(void);
 void ftBzeroTest(void);
+void ftIsalnumTest(void);
 #endif

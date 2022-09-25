@@ -4,4 +4,5 @@ int main(void)
 {
     ftAtoiTest();
     ftBzeroTest();
+    ftIsalnumTest();
 }
