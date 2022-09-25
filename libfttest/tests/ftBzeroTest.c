@@ -22,9 +22,9 @@
 int ftBzeroTestCase(void *arg1, const size_t arg2, size_t arg1Size)
 {
     int ret = 0;
-    ftBzero(arg1, arg2);
     char actualBuf[arg1Size];
     memcpy(actualBuf, arg1, arg1Size);
+    ftBzero(arg1, arg2);
     bzero(actualBuf, arg2);
 
     if (memcmp(arg1, actualBuf, arg1Size))
